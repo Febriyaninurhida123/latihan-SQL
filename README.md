@@ -89,11 +89,13 @@ Secara default tuliskan #mysql-h.127.0.0.1 -u root -p dan enter, jika mysql Anda
 
 * membuat DATABASE
 untuk membuat database gunakan perintah berikut ini:
+
 `CREATE DATABASE [nama_database]`
 nah karena tugasnya membuat database dengan nama latihan2 maka saya akan menggunakan latihan2 sebagai nama database saya.
 ![image](ss/ss13.png)
 
 * untuk masuk ke dalam database kita menggunakan perintah USE
+
 `USE latihan2`
 ![image](ss/ss14.png)
 
@@ -104,41 +106,54 @@ dalam membuat tabel menggunakan perintah berikut :
 `CREATE TABLE nama_tabel (nama_field1 tipe _data(ukuran), nama_field2 tipe_data(ukuran), ..., nama_fieldn tipe_data(ukuran));`
 
 Berikut perintah yang saya gunakan :
+
 `CREATE TABLE biodata (nama VACHAR (15), alamat TEXT);`
 
 ![image](ss/ss15.png)
 
 * Untuk menampilkan struktur tabel yang sudah dibuat, gunakan perintah:
+
 `DESCRIBE [nama_tabel];`
+
 atau
+
 `DESC [nama_tabel]`
 ![image](ss/ss16.png)
 
 * Untuk menambahkan field, gunakan perintah:
+
 `ALTER TABLE [nama_tabel] ADD COLUMN nama_field tipe_data(ukuran) [AFTER|BEFORE|FIRST]`
 
 nah perintah praktikum yaitu menambahkan sebuah kolom keterangan (varchar 15), sebagai kolom terakhir.
 
 maka saya menggunakan : `ALTER TABLE biodata ADD COLUMN keterangan VARCHAR (15) AFTER alamat;`
+
 ![image](ss/ss17.png)
 
 * menambahkan kolom id (int 11) di awal (sebagai kolom pertama) dapat menggunakan perintah berikut:
+
 `ALTER TABLE biodata ADD COLUMN id int (11) FIRST;`
+
 ![image](ss/ss18.png)
 
 * untuk menyisipkan sebuah kolom dengan nama phone (varchar 15) setelah kolom alamat dapat menggunakan perintah berikut:
+
 `ALTER TABLE biodata ADD COLUMN phone VARCHAR (15) AFTER alamat;`
+
 ![image](ss/ss19.png)
 
 * Untuk mengubah tipe data menggunakan perintah berikut
+
 `ALTER TABLE [nama_tabel] MODIFY nama_field tipe_data_baru(ukuran);`
 
 di sini saya akan mengubah tipe data kolom id menjadi char(11):
 
 `ALTER TABLE biodata MODIFY id char(11);`
+
 ![image](ss/ss20.png)
 
 * untuk mengubah nama kolom phone menjadi hp (varchar 20) dapat menggunakan perintah berikut :
+
 `ALTER TABLE [nama_tabel] CHANGE nama_field_lama nama_field_baru tipe_data(ukuran);`
 
 `ALTER TABLE biodata CHANGE phone hp varchar(20);`
@@ -146,91 +161,121 @@ di sini saya akan mengubah tipe data kolom id menjadi char(11):
 ![image](ss/ss21.png)
 
 * Untuk menabahkan kolom email setelah kolom hp bisa menggunakan perintah berikut :
+
 `ALTER TABLE biodata ADD COLUMN email VARCHAR (10) AFTER hp;`
+
 ![image](ss/ss22.png)
 
 * Untuk menghapus field, gunakan perintah:
+
 `ALTER TABLE [nama_tabel] DROP nama_field;`
 
 di sini saya akan menghapus kolom keterangan dari tabel,
 
 `ALTER TABLE biodata DROP keterangan;`
+
 ![image](ss/ss23.png)
 
 * Untuk mengubah nama tabel, gunakan perintah:
+
 `ALTER TABLE [nama_tabel] RENAME [nama_tabel_baru]`
 
 di sini saya akan mengganti nama tabel menjadi data_mahasiswa,
 
 `ALTER TABLE biodata RENAME data_mahasiswa;`
+
 ![image](ss/ss24.png)
 
 * selanjutnya saya akan mengganti nama field id menjadi nim,
+
 `ALTER TABLE data_mahasiswa CHANGE id NIM char(11);`
+
 ![image](ss/ss25.png)
 
 * Untuk menambah Index, gunakan perintah:
+
 `ALTER TABLE [nama_tabel] ADD [INDEX|PRIMARY KEY] (nama_field);`
+
 • Atau bisa juga menggunakan perintah :
+
 `CREATE INDEX nama_index ON nama_tabel (nama_field);`
 
 di sini saya akan menjadikan nim sebagai PRIMARY KEY,
+
 `ALTER TABLE data_mahasiswa ADD PRIMARY KEY (NIM);`
 
 ![image](ss/ss26.png)
 
 * menjadikan email sebagai unique key dapat menggunakan perintah berikut:
+
 `ALTER TABLE data_mahasiswa ADD UNIQUE KEY (email);`
 
 ![image](ss/ss27.png)
 
 ## Evaluasi dan Pertanyaan
+
 * Tulis semua perintah-perintah SQL percobaan di atas beserta outputnya! 
+
 ### SQL DDL
+
 1. Membuat Database
+
 `CREATE DATABASE latihan1;`
+
 ![image](ss/ss28.png)
 
 
 2. Membuat TABLE
+
 `CREATE TABLE siswa (nama VARCHAR(100), alamat TEXT);`
+
 ![image](ss/ss29.png)
 
 
 3. Menambah Kolom
+
 `ALTER TABLE siswa ADD COLUMN ketengan TEXT AFTER alamat;`
+
 ![image](ss/ss30.png)
 
 
 4. Menambah kolom diawal
+
 `ALTER TABLE siswa ADD COLUMN id INT FIRST;`
 
 ![image](ss/ss31.png)
 
 
 5. Mengubah nama kolom
+
 `ALTER TABLE siswa CHANGE COLUMN keterangan kelas TEXT;`
+
 ![image](ss/ss32.png)
 
 
 6. Mengubah tipe data
+
 `ALTER TABLE siswa MODIFY COLUMN kelas VARCHAR(10);`
+
 ![image](ss/ss33.png)
 
 
 7. Menghapus kolom
+
 `ALTER TABLE siswa DROP COLUMN kelas;`
 
 ![image](ss/ss34.png)
 
 
 8. menambah PRIMARY KEY
+
 `ALTER TABLE siswa ADD PRIMARY KEY(id);`
 
 ![image](ss/ss35.png)
 
 
 9. Menambah CONSTRAINT
+
 `ALTER TABLE siswa ADD CONSTRAINT uk_sisiwa PRIMARY KEY(id);`
 
 ![image](ss/ss36.png)
@@ -241,12 +286,14 @@ karena primary key telah digunakan dalam id maka kita bisa menggunakan uniqe key
 
 
 10. Menghapus PRIMARY KEY
+
 `ALTER TABLE siswa DROP PRIMARY KEY;`
 
 ![image](ss/ss37.png)
 
 
 11. Menghapus CONSTRAINT
+
 `ALTER TABLE siswa DROP CONSTRAINT pk_siswa;`
 
 ![image](ss/ss38.png)
