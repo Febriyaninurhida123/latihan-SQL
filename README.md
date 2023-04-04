@@ -43,31 +43,39 @@ Sebelumnya, kita perlu menginstall aplikasi XAMMP terlebih dahulu, berikut langk
 
 1. Download XAMPP
 Download XAMPP terbaru melalui website Apache Friends berikut ini.
+
 ![image](ss/ss1.png)
 
 2. Instal XAMPP
 1. Lakukan instalasi setelah Anda selesai mengunduh. Selama proses instalasi mungkin Anda akan melihat pesan yang menanyakan apakah Anda yakin akan menginstalnya. Silakan tekan Yes untuk melanjutkan instalasi.
 
 2. Klik tombol Next.
+
 ![image](ss/ss2.png)
 
 3. Pada tampilan selanjutnya akan muncul pilihan mengenai komponen mana dari XAMPP yang ingin dan tidak ingin Anda instal. Beberapa pilihan seperti Apache dan PHP adalah bagian penting untuk menjalankan website dan akan otomatis diinstal. Silakan centang MySQL dan phpMyAdmin, untuk pilihan lainnya biarkan saja.
+
 ![image](ss/ss3.png)
 
 4. Berikutnya silakan pilih folder tujuan dimana XAMPP ingin Anda instal. Contohnya di direktori C:\xampp.
+
 ![image](ss/ss4.png)
 
 5. Pada halaman selanjutnya, akan ada pilihan apakah Anda ingin menginstal Bitnami untuk XAMPP, dimana nantinya dapat Anda gunakan untuk install WordPress, Drupal, dan Joomla secara otomatis.
+
 ![image](ss/ss5.png)
 
 6. Pada langkah ini proses instalasi XAMPP akan dimulai. Silakan klik tombol Next.
+
 ![image](ss/ss6.png)
 
 7. Setelah berhasil diinstal, akan muncul notifikasi untuk langsung menjalankan control panel. Silakan klik Finish.
+
 ![image](ss/ss7.png)
 
 8. Jalankan XAMPP
 Silakan buka aplikasi XAMPP kemudian klik tombol Start pada Apache dan MySQL. Jika berhasil dijalankan, Apache dan MySQL akan berwarna hijau seperti gambar di bawah ini.
+
 ![image](ss/ss8.png)
 
 ### Mengakses MySQL dengan Command Prompt (CMD)
@@ -75,16 +83,20 @@ Bagi anda yang menggunakan apache/xampp di Windows. Dalam mengelola database bis
 Caranya seperti berikut :
 * Buka CMD klik Start => All Programs =>Accessories => Pilih Command Prompt atau dengan menekan tombol windows + R di keyboard setelah itu tuliskan cmd dan enter.
 * Saat pertama masuk Command Prompt posisi Anda di C:\Users\namauser>
+
 ![image](ss/ss9.png)
 
 * Tuliskan cd dilanjutkan dengan direktori dimana Anda menginstall xammp, contohnya Anda install di D maka, cd d:\
+
 ![image](ss/ss10.png)
 
 * Tuliskan cd xampp/mysql/bin
 Anda akan masuk ke c:\xampp\mysql\bin>
+
 ![image](ss/ss11.png)
 
 Secara default tuliskan #mysql-h.127.0.0.1 -u root -p dan enter, jika mysql Anda menggunakan password anda bisa menggunakan perintah berikut : mysql.exe mysql -u -namauser -p dan enter kemudian masukkan password Anda.
+
 ![image](ss/ss12.png)
 
 * membuat DATABASE
