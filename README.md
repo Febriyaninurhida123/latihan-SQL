@@ -91,12 +91,15 @@ Secara default tuliskan #mysql-h.127.0.0.1 -u root -p dan enter, jika mysql Anda
 untuk membuat database gunakan perintah berikut ini:
 
 `CREATE DATABASE [nama_database]`
+
 nah karena tugasnya membuat database dengan nama latihan2 maka saya akan menggunakan latihan2 sebagai nama database saya.
+
 ![image](ss/ss13.png)
 
 * untuk masuk ke dalam database kita menggunakan perintah USE
 
 `USE latihan2`
+
 ![image](ss/ss14.png)
 
 * membuat tabel
@@ -118,6 +121,7 @@ Berikut perintah yang saya gunakan :
 atau
 
 `DESC [nama_tabel]`
+
 ![image](ss/ss16.png)
 
 * Untuk menambahkan field, gunakan perintah:
@@ -126,7 +130,9 @@ atau
 
 nah perintah praktikum yaitu menambahkan sebuah kolom keterangan (varchar 15), sebagai kolom terakhir.
 
-maka saya menggunakan : `ALTER TABLE biodata ADD COLUMN keterangan VARCHAR (15) AFTER alamat;`
+maka saya menggunakan : 
+
+`ALTER TABLE biodata ADD COLUMN keterangan VARCHAR (15) AFTER alamat;`
 
 ![image](ss/ss17.png)
 
